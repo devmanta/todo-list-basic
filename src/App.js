@@ -10,7 +10,11 @@ function App() {
   const [filter, setFilter] = useState(filters[0]);
   return (
     <>
-      <HeaderFilter filters={filters} onFilterChange={setFilter} />
+      <HeaderFilter
+        filters={filters}
+        filter={filter}
+        onFilterChange={setFilter}
+      />
       <TodoList filter={filter} />
     </>
   );
