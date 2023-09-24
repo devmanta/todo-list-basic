@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillTrashFill } from "react-icons/bs";
 
 export default function Todo({ todo, onDelete, onUpdate }) {
-  const { id, text, status } = todo;
+  const { text, status } = todo;
 
   const handelOnChange = (e) => {
     const status = e.target.checked ? "completed" : "active";
