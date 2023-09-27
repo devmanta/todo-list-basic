@@ -3,7 +3,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 import styles from "./Todo.module.css";
 
 export default function Todo({ todo, onDelete, onUpdate }) {
-  const { text, status } = todo;
+  const { id, text, status } = todo;
 
   const handelOnChange = (e) => {
     const status = e.target.checked ? "completed" : "active";
@@ -20,10 +20,10 @@ export default function Todo({ todo, onDelete, onUpdate }) {
         type="checkbox"
         checked={status === "completed"}
         onChange={handelOnChange}
-        id={todo.id}
+        id={id}
         className={styles.checkbox}
       />
-      <label className={styles.text} htmlFor={todo.id}>
+      <label className={styles.text} htmlFor={id}>
         {text}
       </label>
       <span className={styles.icon}>
