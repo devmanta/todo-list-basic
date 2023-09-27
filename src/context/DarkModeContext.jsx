@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
@@ -11,6 +11,15 @@ export function DarkModeProvider({ children }) {
     updateDarkMode(!darkMode);
   };
 
+  useEffect(() => {
+    const isDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setDarkMode(isDark);
+    updateDarkMode(isDark);
+  }, []);
+
   return (
     <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
       {children}
@@ -19,6 +28,7 @@ export function DarkModeProvider({ children }) {
 }
 
 const updateDarkMode = (darkMode) => {
+  localStorage.theme = darkMode ? "dark" : "light";
   document.documentElement.classList.toggle("dark", darkMode);
 };
 
