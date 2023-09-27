@@ -5,6 +5,11 @@
   --color-accent: tomato;
 }
 
+html.dark {
+  --color-bg: #1a1c35;
+  --color-text: #fdfffd;
+}
+
 * {
   box-sizing: border-box;
 }
