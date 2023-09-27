@@ -29,6 +29,7 @@ body {
     rgba(70, 82, 83, 1) 8%,
     rgba(106, 134, 199, 1) 100%
   );
+  accent-color: var(--color-accent);
 }
 
 code {
