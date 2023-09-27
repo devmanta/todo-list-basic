@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
   background: rgb(70, 82, 83);
   background: rgb(70, 82, 83);
   background: linear-gradient(

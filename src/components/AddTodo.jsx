@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { RiAddCircleFill } from "react-icons/ri";
+import styles from "./AddTodo.module.css";
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState("");
@@ -21,14 +22,15 @@ export default function AddTodo({ onAdd }) {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className={styles.form}>
       <input
         type="text"
         placeholder="Add Todo"
         onChange={handleOnChange}
         value={text}
+        className={styles.input}
       />
-      <button>
+      <button className={styles.button}>
         <RiAddCircleFill />
       </button>
     </form>
